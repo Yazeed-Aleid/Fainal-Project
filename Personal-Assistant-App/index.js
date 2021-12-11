@@ -1,7 +1,9 @@
 const express = require("express");
 const mongose = require("mongoose");
 const registrationRoute = require("./routes/registrationRouter");
-const bigGoalRouter = require('./routes/BigGoalRouter')
+const bigGoalRouter = require('./routes/BigGoalRouter');
+const taskRouter = require('./module/Schema/Tasks')
+const userRouter = require('./module/Schema/User')
 // set up express
 const app = express();
 app.use(express.json());
