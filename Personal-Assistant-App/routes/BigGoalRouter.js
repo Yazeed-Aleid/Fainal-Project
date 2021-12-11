@@ -34,19 +34,22 @@ router.post('/postGoal',(req,res)=>{
 })
 
 // Edit goal
+router.put("/editGoal/:id", async (req, res) => {
+    try {
+      const goal = await BigGoal.findByIdAndUpdate(req.params.id, {
+        ...req.body
+      });
+  
+      await goal.save();
+  
+      const goals = await BigGoal.find();
+  
+      res.send(goals);
+    } catch (e) {
+      console.log(e);
+    }
 
-// router.put('/editGoal/:id',async(req,res)=>{
-
-//     const goal = await BigGoal.findByIdAndUpdate(req.params.id,{
-//         ...req.body
-//     })
-
-//     await goal.save
-
-//     const goals = BigGoal.find()
-    
-//     res.send(goals)
-// })
+  });
 
 
 // Delete goal
