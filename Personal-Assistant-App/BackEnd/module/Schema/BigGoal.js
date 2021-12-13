@@ -17,11 +17,11 @@ const BigGoal = new Schema({
   },
   startDate: {
     type: Date,
-    required: [true, "You Have to add statr Date of yore goal"]
+    required: [false, "You Have to add statr Date of yore goal"]
   },
   endDate: {
     type: Date,
-    required: [true, "You Have to add end Date of yore goal"]
+    required: [false, "You Have to add end Date of yore goal"]
   },
   comment: {
     type: String,
@@ -29,4 +29,5 @@ const BigGoal = new Schema({
   },
   // Tasks: [Tasks]
 });
+
 module.exports = mongoose.model("BigGoal", BigGoal);

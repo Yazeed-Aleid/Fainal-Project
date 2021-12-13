@@ -25,7 +25,7 @@ const User = new Schema({
   userType: {
     type: String,
     default: "normal"
-  }
+  },
   // BigGoals: [BigGoal]
 
 },{timestamps:true});

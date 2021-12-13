@@ -2,8 +2,8 @@ const express = require("express");
 const mongose = require("mongoose");
 const registrationRoute = require("./routes/registrationRouter");
 const bigGoalRouter = require('./routes/BigGoalRouter');
-const taskRouter = require('./module/Schema/Tasks')
-const userRouter = require('./module/Schema/User')
+const taskRouter = require('./routes/TasksRouter')
+const userRouter = require('./routes/UsersRouter')
 // set up express
 const app = express();
 app.use(express.json());
@@ -17,8 +17,10 @@ const URL = 'mongodb+srv://yazeed1122:yazeed1122@mangodb.ju3ap.mongodb.net/Perso
 
 mongose.connect(URL).then(console.log('We Are Connecting '))
 
-app.use("/registration", registrationRoute)
+app.use("/registration",registrationRoute)
 app.use('/biggoal',bigGoalRouter)
+app.use('/task',taskRouter)
+app.use('/user',userRouter)
 
 app.listen(PORT, () =>
   console.log(`THe server is connecting on port:${PORT} `)

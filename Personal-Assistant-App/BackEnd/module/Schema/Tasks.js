@@ -7,7 +7,8 @@ const Tasks = new Schema({
     required: [true, "You have To add Name of Task"]
   },
   status: {
-    type: Boolean
+    type: String,
+    required: [true, "You have To add task of Task"]
   }
 });
 module.exports = mongoose.model("Tasks", Tasks);

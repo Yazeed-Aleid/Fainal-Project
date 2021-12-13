@@ -5,7 +5,7 @@ const { model } = require("mongoose");
 
 // get All Users
 
-router.get("/.users", async (req, res) => {
+router.get("/users", async (req, res) => {
   const users = await User.find();
   res.json(users);
   console.log("jioik");
@@ -14,7 +14,7 @@ router.get("/.users", async (req, res) => {
 // git user with user id
 
 router.get("/user/:id", async (req, res) => {
-  const user = await User.findById(req.body.id);
+  const user = await User.findById(req.params.id);
 
   res.json(user);
 });
