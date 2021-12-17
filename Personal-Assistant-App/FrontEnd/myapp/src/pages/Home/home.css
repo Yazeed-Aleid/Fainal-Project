@@ -1,0 +1,8 @@
+.home {
+    display: grid   ;
+    grid-template-columns: 2fr 9fr;
+    /* justify-content: ; */
+    /* background-color:#171a39; */
+      background-color: #090d28;
+     
+}

@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
+/* *{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu',sans-serif;
+}
+body{
+    justify-content: center;
+    align-items:center ;
+    min-height: 100vh;
+    background: #3c2846;
+} */
+/* .container{
+    display: flex;
+    justify-content: center;
+    align-items:center ;
+    flex-wrap: wrap;
+    padding:20px;
+  background-color: red ;
+
+} */
+/* .card{
+    position: relative;
+    width: 300px;
+    height: 230px;
+    border-radius: 18%;
+    background: #181b3a;
+    margin: 8px;
+    border:none;
+    overflow: hidden;
+    justify-content: center;
+   
+
+} */
+
+#container{
+    display: grid;
+    /* flex-direction: row;
+    align-items: center;
+    justify-content: space-between; */
+    grid-template-columns: 1fr 1fr 1fr ;
+    grid-template-rows:  1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+    
+    
+}
+/* #card{  
+grid-column-start: 2;
+grid-column-end: 3;
+
+} */
+
+/* #card1{  
+    grid-column-start: 3;
+    grid-column-end: 4;
+    } */
+
+#test{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows:1fr 1fr 1fr 1fr  ;
+    background-color: #181b3a ;
+    border-radius: 10%;
+    width: 380px;
+    height: 220px;
+
+}
+
+
+.nameOfGoal{
+    grid-column-start: 1;
+    grid-column-end:span 3;
+ text-align: center;
+}
+
+.priority{
+    grid-column-start: 1 ;
+    grid-column-end: 2;
+}
+.status{
+    grid-column-start: 3 ;
+    grid-column-end: 4;
+}
+.type{
+    grid-column-start: 2 ;
+    grid-column-end: 3;
+}
+.progressBar{
+    grid-column-start: 1 ;
+    grid-column-end: 4;
+    background-color: blue;
+}
+
+
+/* .content{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 30px;
+    padding-top: 30px;
+    border-radius: 16%;
+    text-align: center;
+    justify-content: space-between;
+    background-color:#090d28 ;
+} */
+
+/* .nameOfGoal{
+    display: flex;
+    align-self: center;
+    font-size: 1.75em;
+    color: #fff;
+    margin-bottom: 10px;
+    
+} */
+/* 
+.priority{
+    color: #fff;
+    line-height: 1.5em  ;
+}
+
+.status{
+    color:#fff
+}
+.type{
+    color: #fff;
+}
+.progressBar{
+    color: #fff;
+}
+.date{
+    color: #fff;
+} */
+
+.nameOfGoal{
+    color: #fff;
+}
+.status{
+    color: #fff;
+}
+
+.type{
+    color: #fff;
+}
+
+.progressBar{
+    color: #fff;
+}
+
+.date{
+    color: #fff;
+}
+
+
+
+
+

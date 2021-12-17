@@ -18,7 +18,7 @@ const User = new Schema({
     required: [true, "Enter Yore password"]
   },
   phoneNumber: {
-    type: Number,
+    type: String,
    required:true,
     unique: true
   },

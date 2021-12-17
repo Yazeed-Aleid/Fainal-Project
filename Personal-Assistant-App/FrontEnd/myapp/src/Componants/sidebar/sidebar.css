@@ -1,0 +1,40 @@
+.sidebar {
+    flex: 1;
+    margin: 10px;
+    background-color: #181b3a;
+    height: 100% ;
+    /* width: 90%; */
+    border-radius: 10px;
+    color: #e58845;
+    font-size: small;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    padding-top: 19px;
+    font-weight: bold;
+    
+}
+h5{
+    color: #fff;
+}
+.add{
+    width: 80px;
+    height: auto;
+}
+.dash{
+    width: 40px;
+    height: auto;
+}
+.setting{
+    width: 40px;
+    height: auto;
+}
+.repo{
+    width: 40px;
+    height: auto;
+}
+.home1{
+    width: 90px;
+    height: auto;
+}

@@ -10,18 +10,20 @@ router.post("/register", async (req, res) => {
   try {
     const salt = await bcrypt.genSalt(10);
     const passwordHash = await bcrypt.hash(req.body.password, salt);
-    const emailWordHash = await bcrypt.hash(req.body.email, salt);
+    // const emailWordHash = await bcrypt.hash(req.body.email, salt);
     console.log("yzacd");
 
     const newUser = new User({
       ...req.body,
       password: passwordHash,
-      email: emailWordHash,
+      // email: emailWordHash,
     });
 
-    newUser.save();
+    const user = await newUser.save();
 
-    res.status(200).json(newUser);
+    const {password, ...others} = user._doc
+    
+    res.status(200).json(others);
 
     // catching Eroor
   } catch (err) {
