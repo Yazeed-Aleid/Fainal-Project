@@ -19,6 +19,11 @@ router.get("/user/:id", async (req, res) => {
   res.json(user);
 });
 
+router.get("/userGoals/:id", async (req, res) => {
+  const user = await User.findById(req.params.id);
+
+  res.send(user.BigGoals);
+});
 // Edit user
 router.put("/editUser/:id", async (req, res) => {
   try {

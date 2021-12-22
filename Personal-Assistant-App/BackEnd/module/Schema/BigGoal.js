@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
-// const Tasks = require('./Tasks')
+const TasksSchema = require('./Tasks').schema
+// import Tasks from './Tasks'.Schema
 
 const BigGoal = new Schema({
   name: {
@@ -25,9 +26,9 @@ const BigGoal = new Schema({
   },
   comment: {
     type: String,
-    required: [true, "You Have to add comment of yore goal"]
+    required: [false, "You Have to add comment of yore goal"]
   },
-  // Tasks: [Tasks]
+  tasks: [TasksSchema]
 });
 
 module.exports = mongoose.model("BigGoal", BigGoal);

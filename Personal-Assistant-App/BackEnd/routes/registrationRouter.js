@@ -16,14 +16,17 @@ router.post("/register", async (req, res) => {
     const newUser = new User({
       ...req.body,
       password: passwordHash,
-      // email: emailWordHash,
     });
 
     const user = await newUser.save();
 
-    const {password, ...others} = user._doc
-    
-    res.status(200).json(others);
+    const { password, ...others } = user._doc;
+    const token = JWT.sign({ id: user._id, username: user.username }, "SHHHHH");
+
+    res.status(200).json({
+      token,
+      user: others,
+    });
 
     // catching Eroor
   } catch (err) {
@@ -61,19 +64,22 @@ router.post("/login", async (req, res) => {
       // console.log("Eroor");
     } else {
       // res.json({message:'we are done '})
-      res.status(200).send(`Wellcome`);
+      const token = JWT.sign(
+        { id: user._id, username: user.username },
+        "SHHHHH"
+      );
+
+      res.status(200).json({
+        token,
+        user: {
+          ...req.body,
+        },
+      });
+
       console.log("Hello");
     }
 
     // creating our json web token by passing the user id and our JWT_secreat
-    const token = JWT.sign({ id: user._id }, "SHHHHH");
-
-    res.json({
-      token,
-      user: {
-        ...req.body,
-      },
-    });
   } catch (err) {
     res.status(500).json({ msg: "err" });
   }

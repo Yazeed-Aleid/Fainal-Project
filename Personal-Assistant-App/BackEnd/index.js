@@ -4,8 +4,12 @@ const registrationRoute = require("./routes/registrationRouter");
 const bigGoalRouter = require('./routes/BigGoalRouter');
 const taskRouter = require('./routes/TasksRouter')
 const userRouter = require('./routes/UsersRouter')
+const cors = require('cors')
 // set up express
+
+
 const app = express();
+app.use(cors())
 app.use(express.json());
 //This variable is for online hosting like heroku or our localhost:3001
 
@@ -23,5 +27,5 @@ app.use('/task',taskRouter)
 app.use('/user',userRouter)
 
 app.listen(PORT, () =>
-  console.log(`THe server is connecting on port:${PORT} `)
+  console.log(`The server is connecting on port:${PORT} `)
 );

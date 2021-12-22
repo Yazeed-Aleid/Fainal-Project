@@ -11,4 +11,5 @@ const Tasks = new Schema({
     required: [true, "You have To add task of Task"]
   }
 });
+
 module.exports = mongoose.model("Tasks", Tasks);

@@ -2,6 +2,7 @@ const router = require("express").Router();
 const BigGoal = require("../module/Schema/BigGoal");
 const { json } = require("express");
 const { model } = require("mongoose");
+const User = require("./../module/Schema/User");
 
 // get All goal
 
@@ -10,7 +11,7 @@ router.get("/bigGoals", async (req, res) => {
     const bigGoals = await BigGoal.find();
     res.json(bigGoals);
   } catch (err) {
-    res.status(400).send('error');
+    res.status(400).send("error");
   }
 });
 
@@ -27,14 +28,22 @@ router.get("/bigGoal/:id", async (req, res) => {
 
 // post
 
-router.post("/postGoal", (req, res) => {
+router.post(`/postGoal/:id`, async (req, res) => {
   try {
+    const user = await User.findById({ _id: req.params.id });
+    console.log(user);
     const newGoal = new BigGoal({
-      ...req.body,
+      name: req.body.name,
+      type: req.body.type,
+      status: req.body.status,
+      comment: req.body.comment,
+      endDate:req.body.endDate,
+      task:req.body.task
     });
-    newGoal.save();
+    user.BigGoals.push(newGoal);
+    await user.save();
 
-    res.status(200).json(newGoal);
+    res.status(200).json(user);
   } catch (err) {
     res.send(err);
   }
