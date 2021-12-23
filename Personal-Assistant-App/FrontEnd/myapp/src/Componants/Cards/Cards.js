@@ -151,8 +151,8 @@ const Cards = () => {
                     {goal.tasks.map((task) => {
                       return (
                         <>
-                          <p>{task.name}</p>
-                          <p>{task.status}</p>
+                          <p className="pTask">Task Name: {task.name}</p>
+                          <p className="pTask">Task Status: {task.status}</p>
                         </>
                       );
                     })}
