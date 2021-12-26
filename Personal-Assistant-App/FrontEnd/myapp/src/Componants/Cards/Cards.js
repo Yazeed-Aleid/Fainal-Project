@@ -1,4 +1,4 @@
-import { Button, Modal, Form } from "react-bootstrap";
+import { Button, Modal, Form, Table, ToggleButton } from "react-bootstrap";
 import "./cards.css";
 import img from "../../img/Home.png";
 import { useState, useEffect } from "react";
@@ -15,6 +15,7 @@ const Cards = () => {
   const [task, setTask] = useState("");
   const [status, setStatus] = useState("");
   const [show, setShow] = useState(false);
+  const [checked, setChecked] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -89,22 +90,72 @@ const Cards = () => {
               <div id="card">
                 <div id="test">
                   <Button variant="primary" onClick={handleShow}>
-                    Launch demo modal
+                    Tasks
                   </Button>
 
                   <Modal show={show} onHide={handleClose} animation={false}>
                     <Modal.Header closeButton>
-                      <Modal.Title>Modal heading</Modal.Title>
+                      <Modal.Title>Tasks List</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                       <Form>
                         <br />
-                        <Link to="/">
-                          <img
-                            src="https://img.icons8.com/dusk/128/000000/home.png"
-                            className="home2"
-                          />
-                        </Link>
+                        {/* ----------------------------------------------------------- */}
+                        {/*                        
+                        <div className="Tasks">
+                          {goal.tasks.map((task) => {
+                            return (
+                              <>
+
+                                <p className="pTask">Task Name: {task.name}</p>
+                                <p className="pTask">Task Status: {task.status}</p>
+
+                              </>
+                            );
+                          })}
+                        </div> */}
+
+                        <Table striped bordered hover size="sm">
+                          <thead>
+                            <tr>
+                              <th>Task Name</th>
+                              <th>Task Status</th>
+                              <th>Done</th>
+                              <th>Delete</th>
+                            </tr>
+                          </thead>
+
+                          <tbody>
+                            {goal.tasks.map((task) => {
+                              return (
+                                <>
+                                  <tr>
+                                    <td className="pTask"> {task.name}</td>
+                                    <td className="pTask">{task.status}</td>
+                                    <td>
+                                      {" "}
+                                      <ToggleButton
+                                        className="mb-2"
+                                        id="toggle-check"
+                                        type="checkbox"
+                                        variant="outline-primary"
+                                        checked={checked}
+                                        value="1"
+                                        onChange={(e) =>
+                                          setChecked(e.currentTarget.checked)
+                                        }
+                                      >
+                                        Checked
+                                      </ToggleButton>
+                                    </td>
+                                  </tr>
+                                </>
+                              );
+                            })}
+                          </tbody>
+                        </Table>
+
+                        {/* ------------------------------------------------------------- */}
                         <br />
                         <br />
 
@@ -147,7 +198,7 @@ const Cards = () => {
                   <div className="EndDate">
                     <p>{goal.endDate.split("T")[0]}</p>
                   </div>
-                  <div className="Tasks">
+                  {/* <div className="Tasks">
                     {goal.tasks.map((task) => {
                       return (
                         <>
@@ -156,7 +207,7 @@ const Cards = () => {
                         </>
                       );
                     })}
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
@@ -168,7 +219,6 @@ const Cards = () => {
     </div>
   );
 };
-
 
 export default Cards;
 
