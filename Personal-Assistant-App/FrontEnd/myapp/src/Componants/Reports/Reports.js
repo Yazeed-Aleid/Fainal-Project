@@ -1,11 +1,19 @@
-import react, { useState, useEffect } from "react";
-import "./form.css";
+import { useEffect, useState } from "react";
+import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
-import { Button, Form } from "react-bootstrap";
-import { Link, useNavigate } from "react-router-dom";
-import jwt_decode from "jwt-decode";
+import {
+  Button,
+  Modal,
+  Form,
+  Table,
+  ToggleButton,
+  ProgressBar,
+  Dropdown,
+  ButtonGroup,
+  option,
+} from "react-bootstrap";
 
-function FormPage() {
+function Reports() {
   const [name, setName] = useState("");
   const [type, setType] = useState("");
   const [status, setStatus] = useState("");
@@ -15,49 +23,9 @@ function FormPage() {
   const [task, setTask] = useState([]);
   const nav = useNavigate();
 
-  //   const []
-  let decodedData;
-  const storedToken = localStorage.getItem("token");
-  if (storedToken) {
-    decodedData = jwt_decode(storedToken, { payload: true });
-    // console.log(decodedData);
-    let expirationDate = decodedData.exp;
-    var current_time = Date.now() / 1000;
-    if (expirationDate < current_time) {
-      localStorage.removeItem("token");
-    }
-  }
-  console.log(decodedData);
 
-  function formPage(e) {
-    const newForm = {
-      name: name,
-      type: type,
-      status: status,
-      endDate: endDate,
-      comment: comment,
-      task: task,
-    };
-
-    console.log(endDate);
-
-    // axios.post(`/biggoal/postGoal`,newForm)
-    // .then((res)=>{
-    //     console.log(res);
-    // })
-
-    axios.post(`/biggoal/postGoal/${decodedData.id}`, newForm).then((res) => {
-      console.log(res);
-      nav("/");
-    });
-
-    axios.post(`/task/postTask/${decodedData.id}`).then((res) => {
-      console.log(res);
-      // console.log(bigGoal.id);
-    });
-  }
-
-  return (
+  
+  return(
     <div className="main">
       <div></div>
       <div>
@@ -114,16 +82,13 @@ function FormPage() {
         <br />
         <br />
         {/* <Link to='/'> */}
-        <button
-          type="button"
-          class="btn btn-warning"
-          onClick={(e) => formPage(e)}
-        >
-          Goal
-        </button>
+   
         {/* </Link> */}
       </div>
     </div>
   );
-}
-export default FormPage;
+}  
+
+
+
+export default Reports;

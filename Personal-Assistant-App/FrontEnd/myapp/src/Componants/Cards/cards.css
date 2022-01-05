@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap");
 
 /* *{
     margin: 0;
@@ -35,64 +35,64 @@ body{
 
 } */
 
-#container{
-    display: grid;
-    /* flex-direction: row;
+#container {
+  display: grid;
+  /* flex-direction: row;
     align-items: center;
     justify-content: space-between; */
-    grid-template-columns: 1fr 1fr 1fr ;
-    grid-template-rows:  1fr 1fr 1fr 1fr;
-    grid-gap: 10px;
-    
-    
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
 }
-/* #card{  
-grid-column-start: 2;
-grid-column-end: 3;
-
-} */
-
-/* #card1{  
-    grid-column-start: 3;
-    grid-column-end: 4;
-    } */
-
-#test{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows:1fr 1fr 1fr 1fr  ;
-    background-color: #181b3a ;
-    border-radius: 10%;
-    width: 380px;
-    height: 220px;
-
+#card {
+  grid-column-start: 2;
+  grid-column-end: 3;
 }
 
-
-.nameOfGoal{
-    grid-column-start: 1;
-    grid-column-end:span 3;
- text-align: center;
+#card1 {
+  grid-column-start: 3;
+  grid-column-end: 4;
 }
 
-.priority{
-    grid-column-start: 1 ;
-    grid-column-end: 2;
-}
-.status{
-    grid-column-start: 3 ;
-    grid-column-end: 4;
-}
-.type{
-    grid-column-start: 2 ;
-    grid-column-end: 3;
-}
-.progressBar{
-    grid-column-start: 1 ;
-    grid-column-end: 4;
-    background-color: blue;
+#test {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  background-color: #181b3a;
+  border-radius: 10%;
+  width: 280px;
+  height: 340px;
 }
 
+.nameOfGoal {
+  grid-column-start: 1;
+  grid-column-end: span 3;
+  text-align: center;
+}
+
+.priority {
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+.status {
+  grid-column-start: 3;
+  grid-column-end: 4;
+}
+.type {
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+.progressBar {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  background-color: blue;
+}
+.remvCard{
+  grid-column-start: 3;
+  grid-column-end: 4;
+  padding: 0;
+  margin: 0;
+}
 
 /* .content{
     display: flex;
@@ -133,30 +133,29 @@ grid-column-end: 3;
     color: #fff;
 } */
 
-.nameOfGoal{
-    color: #fff;
+.nameOfGoal {
+  color: #fff;
 }
-.status{
-    color: #fff;
-}
-
-.type{
-    color: #fff;
+.status {
+  color: #fff;
 }
 
-.progressBar{
-    color: #fff;
+.type {
+  color: #fff;
 }
 
-.date{
-    color: #fff;
-}
-.EndDate{
-    color: #fff;
+.progressBar {
+  color: #fff;
 }
 
+.date {
+  color: #fff;
+}
+.EndDate {
+  color: #fff;
+}
 
-
-
-
-
+.rem {
+  width: 29px;
+  height: auto;
+}

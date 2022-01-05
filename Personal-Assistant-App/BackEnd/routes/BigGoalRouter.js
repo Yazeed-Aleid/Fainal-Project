@@ -37,8 +37,8 @@ router.post(`/postGoal/:id`, async (req, res) => {
       type: req.body.type,
       status: req.body.status,
       comment: req.body.comment,
-      endDate:req.body.endDate,
-      task:req.body.task
+      endDate: req.body.endDate,
+      task: req.body.task,
     });
     user.BigGoals.push(newGoal);
     await user.save();
@@ -68,19 +68,29 @@ router.put("/editGoal/:id", async (req, res) => {
 
 // Delete goal
 
-router.delete("/deleteGoal/:id", async (req, res) => {
-  try {
-    const goal = await BigGoal.findByIdAndDelete({ _id: req.params.id });
+router.delete("/deleteGoal/:id/:BigGoalID", async (req, res) => {
+ 
+  const user = await User.findById({ _id: req.params.id }).then(
+    async (user) => {
+      let bigGoal = user.BigGoals.forEach(async (e) => {
+        // console.log(e);
+        
+        if (e._id.toString() == req.params.BigGoalID) {
+          console.log('HHhhHH',e);
+          await e.remove({ _id: req.params.BigGoalID });
+          try {
+            await user.save();
+            // console.log(userBigGoals[0].tasks);
 
-    if (!goal) {
-      return res.status(400).send("NotFound");
+            res.status(200).json(user);
+          } catch (e) {
+            res.status(400).json(e);
+          }
+        }
+      });
     }
-    const goals = await BigGoal.find();
+  );
 
-    res.send(goals);
-  } catch (err) {
-    res.send(err);
-  }
 });
 
 module.exports = router;

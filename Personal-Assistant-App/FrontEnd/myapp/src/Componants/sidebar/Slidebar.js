@@ -48,14 +48,19 @@ const Sidebar = () => {
         <br />
         <br />
         <br />
-
+        {/* <Link to='/Reports'> */}
         <h5>
+        <Link to='/Reports' >
           <img
             src="https://img.icons8.com/external-itim2101-lineal-color-itim2101/64/000000/external-report-project-management-itim2101-lineal-color-itim2101.png"
             className="repo"
           />
           Reports
+          </Link>
+
         </h5>
+        {/* </Link> */}
+
 
         <br />
         <br />

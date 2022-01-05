@@ -27,7 +27,7 @@ function Home() {
   return (
     <>
       {(function () {
-        if (decodedData === undefined) {
+        if (decodedData == undefined) {
           nav("/registration");
         } else {
           {
