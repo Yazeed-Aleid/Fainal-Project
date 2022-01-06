@@ -150,6 +150,7 @@ const Cards = () => {
           decodedData={decodedData}
           bigGoalId={bigGoalId}
         />
+        {/* <Reports bigGoals={bigGoals} /> */}
       </div>
     </div>
   );

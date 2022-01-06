@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import jwt_decode from "jwt-decode";
+
 import axios from "axios";
 import {
   Button,
@@ -22,73 +24,69 @@ function Reports() {
   const [comment, setComment] = useState("");
   const [task, setTask] = useState([]);
   const nav = useNavigate();
+  const [show, setShow] = useState(false);
+  const [rgoals, setRgoals] = useState([]);
 
+  let decodedData;
+  const storedToken = localStorage.getItem("token");
+  if (storedToken) {
+    decodedData = jwt_decode(storedToken, { payload: true });
+    // console.log(decodedData);
+    let expirationDate = decodedData.ex;
+    var current_time = Date.now() / 1000;
+    if (expirationDate < current_time) {
+      localStorage.removeItem("token");
+    }
+  }
 
-  
-  return(
-    <div className="main">
-      <div></div>
-      <div>
-        <Form>
-          <br />
-          <Link to="/">
-            <img
-              src="https://img.icons8.com/dusk/128/000000/home.png"
-              className="home2"
-            />
-          </Link>
-          <br />
-          <br />
+  console.log(decodedData.id);
 
-          <Form.Label>Goal Name:</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Big Goal"
-            onChange={(e) => setName(e.target.value)}
-          />
-          <Form.Label>Type:</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="type"
-            onChange={(e) => setType(e.target.value)}
-          />
-          <Form.Label>Status:</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="status"
-            onChange={(e) => setStatus(e.target.value)}
-          />
-          <Form.Label>Start Date:</Form.Label>
-          <Form.Control
-            type="date"
-            placeholder="Start Date"
-            onChange={(e) => SetStartDate(e.target.value)}
-          />
-          <Form.Label>End Date:</Form.Label>
-          <Form.Control
-            type="date"
-            placeholder="End Date"
-            onChange={(e) => setEndDate(e.target.value)}
-          />
-          <Form.Label>Add Comment:</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Add any Comment"
-            onChange={(e) => setComment(e.target.value)}
-          />
-        
-          {/* <button type="button" class="btn btn-warning" >Add Task</button> */}
-        </Form>
-        <br />
-        <br />
-        {/* <Link to='/'> */}
-   
-        {/* </Link> */}
-      </div>
+  useEffect(() => {
+    axios.get(`user/userGoals/${decodedData.id}`).then((res) => {
+      console.log(res.data);
+      setRgoals(res.data);
+    });
+  }, []);
+
+  console.log(rgoals);
+
+  return (
+    <div>
+
+      <Table striped bordered hover>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Status</th>
+      <th>EndDate</th>
+      <th>Comment</th>
+    </tr>
+  </thead>
+ 
+
+  <tbody>
+  {rgoals.map((goal)=>{
+    return(
+    <tr>
+      <td>{goal.name}</td>
+      <td>{goal.type}</td>
+
+      <td>{goal.status}</td>
+      <td>{goal.endDate.split("T")[0]}</td>
+      <td>{goal.comment}</td>
+
+    </tr>
+    )
+     })}
+  </tbody>
+ 
+
+</Table>
+
     </div>
   );
-}  
-
-
+}
 
 export default Reports;
+// what is the most
