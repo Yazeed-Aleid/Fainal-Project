@@ -1,31 +1,31 @@
 .navbar {
-    flex: 6;
-    background-color: #181b3a;
-    margin: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px;
-    border-radius: 10px;
-    color: #fff;
-    font-size: 12px;
-    height: 12vh;
+  flex: 6;
+  background-color: #181b3a;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 12px;
+  height: 12vh;
 }
 
 .right {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .right span {
-    margin-right: 10px;
+  margin-right: 10px;
 }
 
 .right img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
 }
 /* img{
     color: #fff;
@@ -33,7 +33,7 @@
     width: 9px;
     
 } */
-.home2{
-    width: 60px;
-    height: auto;
+.home2 {
+  width: 60px;
+  height: auto;
 }

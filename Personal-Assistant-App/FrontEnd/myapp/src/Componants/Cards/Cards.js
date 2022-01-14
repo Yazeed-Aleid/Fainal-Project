@@ -95,6 +95,38 @@ const Cards = () => {
       });
   }
 
+  const colors = [
+    {
+      value: "To Do",
+      label: "red",
+    },
+    {
+      value: 2,
+      label: "grean",
+    },
+    {
+      value: 3,
+      label: "blue",
+    },
+    {
+      value: 4,
+      label: "orange",
+    },
+    {
+      value: 5,
+      label: "yellow",
+    },
+  ];
+
+  function changeColors() {
+    console.log("jkhkjh");
+    // if(e.status== "To Do"){
+    //   return{
+    //     backgroundColor:'red'
+    //   }
+    // }
+  }
+
   return (
     <div>
       <div id="container">
@@ -122,8 +154,8 @@ const Cards = () => {
                   <div className="type">
                     <p>{goal.type}</p>
                   </div>
-                  <div className="status">
-                    <h4>{goal.status}</h4>
+                  <div className="status" onChange={changeColors}>
+                    <h5>{goal.status}</h5>
                   </div>
                   <div className="EndDate">
                     <p>{goal.endDate.split("T")[0]}</p>
@@ -138,7 +170,6 @@ const Cards = () => {
             // <p>{goal.name}</p>
           );
         })}
-
 
         <ModalComp
           show={show}

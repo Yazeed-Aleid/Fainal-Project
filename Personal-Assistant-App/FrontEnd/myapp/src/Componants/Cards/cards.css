@@ -75,9 +75,19 @@ body{
   grid-column-end: 2;
 }
 .status {
-  grid-column-start: 3;
-  grid-column-end: 4;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: end;
+  grid-column-start: 2;
+  grid-column-end: 5;
 }
+/* .status{
+  background-color: cadetblue;
+  height: 30px;
+  
+  
+} */
 .type {
   grid-column-start: 2;
   grid-column-end: 3;
@@ -87,7 +97,7 @@ body{
   grid-column-end: 4;
   background-color: blue;
 }
-.remvCard{
+.remvCard {
   grid-column-start: 3;
   grid-column-end: 4;
   padding: 0;

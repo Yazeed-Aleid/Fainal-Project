@@ -1,82 +1,79 @@
-.main{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
-    background-color:rgb(15, 146, 146);
-
+.main {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  background-color: rgb(15, 146, 146);
 }
 
-
-
 .register {
-    height: 100vh;
-    width: 100%;
-    background-color:rgb(15, 146, 146);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  height: 100vh;
+  width: 100%;
+  background-color: rgb(15, 146, 146);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .formContainer {
-    background-color: #fff;
-    opacity: 0.9;
-    width: 30%;
-    margin: 0px auto;
-    padding: 20px;
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    position: relative;
+  background-color: #fff;
+  opacity: 0.9;
+  width: 30%;
+  margin: 0px auto;
+  padding: 20px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
 }
 
 .top {
-    width: 20%;
-    height: 70px;
-    background-color: rgb(15, 146, 146);
-    border-radius: 50%;
-    position: absolute;
-    top: -45px;
-    bottom: 0;
+  width: 20%;
+  height: 70px;
+  background-color: rgb(15, 146, 146);
+  border-radius: 50%;
+  position: absolute;
+  top: -45px;
+  bottom: 0;
 }
 .bottom {
-    width: 20%;
-    height: 70px;
-    background-color: rgb(15, 146, 146);
-    border-radius: 50%;
-    position: absolute;
-    top: 95%;
-    bottom: 0;
+  width: 20%;
+  height: 70px;
+  background-color: rgb(15, 146, 146);
+  border-radius: 50%;
+  position: absolute;
+  top: 95%;
+  bottom: 0;
 }
 .formContainer form {
-    width: 100%;
-    margin: 0px auto;
-    margin-top: 20px;
+  width: 100%;
+  margin: 0px auto;
+  margin-top: 20px;
 }
 .formContainer form label {
-    font-size: 18px;
-    font-weight: 600;
+  font-size: 18px;
+  font-weight: 600;
 }
 .formContainer form input {
-    padding: 10px;
-    border: none;
-    width: 100%;
-    background-color: rgb(232 240 254);
-    border-radius: 10px;
-    margin-bottom: 15px;
+  padding: 10px;
+  border: none;
+  width: 100%;
+  background-color: rgb(232 240 254);
+  border-radius: 10px;
+  margin-bottom: 15px;
 }
 
 .btn {
-    width: 100%;
-    background-color: rgb(15, 146, 146);
-    color: #fff;
-    border:none;
-    border-radius: 10px;
-    padding: 10px;
-    margin-bottom: 10px;
+  width: 100%;
+  background-color: rgb(15, 146, 146);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
 }
 .imgSection {
-    position: absolute;
-    right: 50px;
+  position: absolute;
+  right: 50px;
 }

@@ -1,9 +1,27 @@
+*{
+  margin:0;
+      padding:0;
+}
+
 .home {
+  
     display: grid   ;
     grid-template-columns: 2fr 9fr ;
     /* justify-content: ; */
     /* background-color:#171a39; */
-      background-color: #090d28;
+      
       height: 100%;
+      background-color: #090d28;
+
+      
      
+}
+html, body {
+  margin:0;
+  padding:0;
+  background-color: #090d28;
+
+}
+h1 {
+  margin:0;
 }

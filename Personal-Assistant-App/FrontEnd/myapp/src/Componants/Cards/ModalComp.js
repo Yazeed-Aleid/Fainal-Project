@@ -39,7 +39,6 @@ export default function ModalComp({
   /* Delete */
 
   function deleteCard(id) {
-
     axios
       .delete(`/task/deleteTask/${decodedData.id}/${bigGoalId}/${id}`)
       .then((res) => {
@@ -197,3 +196,4 @@ export default function ModalComp({
     </Modal>
   );
 }
+

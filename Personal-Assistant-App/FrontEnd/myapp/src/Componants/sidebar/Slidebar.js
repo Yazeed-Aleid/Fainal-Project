@@ -14,8 +14,8 @@ const Sidebar = () => {
         <br />
         <br />
         <br />
-      
-        <Link to='/form'>
+
+        <Link to="/form">
           <img
             src="https://img.icons8.com/color/100/000000/add--v1.png"
             className="add"
@@ -50,17 +50,15 @@ const Sidebar = () => {
         <br />
         {/* <Link to='/Reports'> */}
         <h5>
-        <Link to='/Reports' >
-          <img
-            src="https://img.icons8.com/external-itim2101-lineal-color-itim2101/64/000000/external-report-project-management-itim2101-lineal-color-itim2101.png"
-            className="repo"
-          />
-          Reports
+          <Link to="/Reports" className="link">
+            <img
+              src="https://img.icons8.com/external-itim2101-lineal-color-itim2101/64/000000/external-report-project-management-itim2101-lineal-color-itim2101.png"
+              className="repo"
+            />
+            Reports
           </Link>
-
         </h5>
         {/* </Link> */}
-
 
         <br />
         <br />

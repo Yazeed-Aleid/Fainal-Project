@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import jwt_decode from "jwt-decode";
+import "./Reports.css";
 
 import axios from "axios";
 import {
@@ -52,41 +53,33 @@ function Reports() {
 
   return (
     <div>
-
       <Table striped bordered hover>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Status</th>
-      <th>EndDate</th>
-      <th>Comment</th>
-    </tr>
-  </thead>
- 
+        <thead>
+          <tr>
+            <th>Goal name</th>
+            <th>Type</th>
+            <th>Status</th>
+            <th>EndDate</th>
+            <th>Comment</th>
+          </tr>
+        </thead>
 
-  <tbody>
-  {rgoals.map((goal)=>{
-    return(
-    <tr>
-      <td>{goal.name}</td>
-      <td>{goal.type}</td>
-
-      <td>{goal.status}</td>
-      <td>{goal.endDate.split("T")[0]}</td>
-      <td>{goal.comment}</td>
-
-    </tr>
-    )
-     })}
-  </tbody>
- 
-
-</Table>
-
+        <tbody>
+          {rgoals.map((goal) => {
+            return (
+              <tr>
+                <td>{goal.name}</td>
+                <td>{goal.type}</td>
+                <td>{goal.status}</td>
+                <td>{goal.endDate.split("T")[0]}</td>
+                <td>{goal.comment}</td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </Table>
     </div>
   );
 }
 
 export default Reports;
-// what is the most

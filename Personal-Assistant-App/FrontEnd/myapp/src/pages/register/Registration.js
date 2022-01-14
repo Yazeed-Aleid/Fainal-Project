@@ -2,9 +2,9 @@ import react, { useEffect, useState } from "react";
 import "./register.css";
 import img from "../../img/Home.png";
 import axios from "axios";
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import jwt from "jwt-decode";
-import {Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Registration() {
   // const [user, setUser] = useState([]);
@@ -13,10 +13,7 @@ function Registration() {
   const [password, setPassword] = useState("");
   const [phoneNumber, setPhoneNumber] = useState();
 
-  const nav = useNavigate()
-  
-
- 
+  const nav = useNavigate();
 
   function register() {
     // e.preventdefault();
@@ -29,25 +26,18 @@ function Registration() {
     // console.log(newUser)
     axios.post("/registration/register", newUser).then((res) => {
       console.log(res);
-    
+
       console.log(res.data);
 
-    if (res.data) {
-      const token = res.data.token;
-      const authorSign = jwt(token); // decode your token here
-      localStorage.setItem("token", token);
-       nav("/")
-      // navigate("/");
-    }
-  
+      if (res.data) {
+        const token = res.data.token;
+        const authorSign = jwt(token); // decode your token here
+        localStorage.setItem("token", token);
+        nav("/");
+        // navigate("/");
+      }
     });
-
-
-
   }
-
-
-
 
   return (
     <div className="register">
@@ -87,12 +77,13 @@ function Registration() {
             onChange={(e) => setPhoneNumber(e.target.value)}
           />
         </form>
-       <span>Do you have an account ? <Link to="/login">Login</Link></span>
-        <br/>
-        <button className="btn" onClick={()=>register()}>
+        <span>
+          Do you have an account ? <Link to="/login">Login</Link>
+        </span>
+        <br />
+        <button className="btn" onClick={() => register()}>
           Submit
         </button>
-        
       </div>
       <div className="imgSection">
         <img src={img} alt="" />

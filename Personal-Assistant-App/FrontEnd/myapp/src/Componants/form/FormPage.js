@@ -85,11 +85,16 @@ function FormPage() {
             onChange={(e) => setType(e.target.value)}
           />
           <Form.Label>Status:</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="status"
-            onChange={(e) => setStatus(e.target.value)}
-          />
+          <Form.Select onChange={(e) => setStatus(e.target.value)}>
+            <option>{task.status}</option>
+            <option value="To Do" style={{ backgroundColor: "green" }}>
+              To Do
+            </option>
+            <option value="In progress">In progress</option>
+            <option value="Pending">Pending </option>
+            <option value="Canceled">Canceled</option>
+            <option value="Done">Done</option>
+          </Form.Select>
           <Form.Label>Start Date:</Form.Label>
           <Form.Control
             type="date"
@@ -108,7 +113,7 @@ function FormPage() {
             placeholder="Add any Comment"
             onChange={(e) => setComment(e.target.value)}
           />
-        
+
           {/* <button type="button" class="btn btn-warning" >Add Task</button> */}
         </Form>
         <br />
@@ -127,3 +132,4 @@ function FormPage() {
   );
 }
 export default FormPage;
+
